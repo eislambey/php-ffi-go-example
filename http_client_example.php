@@ -1,7 +1,8 @@
 <?php
 
 // this function taken from https://blog.claudiupersoiu.ro/2019/12/23/a-bit-of-php-go-ffi-and-holiday-spirit/lang/en/
-function stringToGoString($ffi, $name) {
+function stringToGoString(FFI $ffi, string $name): FFI\CData
+{
     $strChar = str_split($name);
 
     $c = FFI::new('char[' . count($strChar) . ']', false);
